@@ -7,8 +7,8 @@ import { envs } from './core/config/env';
 const app = express();
 const port = envs.PORT;
 
-app.use(express.json()); // parse json in request body (allow raw)
-app.use(express.urlencoded({ extended: true })); // allow x-www-form-urlencoded
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(compression());
 
 app.listen(port, () => {
@@ -26,3 +26,5 @@ app.get('/teste', (req: Request, res: Response) => {
 		message: `teste`
 	});
 });
+
+export default app;
